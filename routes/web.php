@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AdminControllerC;
+use App\Http\Controllers\AgentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,4 +31,18 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+// Admin Group Middleware
 require __DIR__.'/auth.php';
+
+
+Route::middleware(['auth' , 'role:admin'])->group(function (){
+    Route::get('/admin/dashboard',[AdminController::class,'AdminDashboard'])->name('admin.dashboard');
+   
+}); // end  Group Admin Middleware
+
+
+Route::middleware(['auth' , 'role:agent'])->group(function () 
+{
+    Route::get('/agent/dashboard',[AgentController::class, 'AgentDashboard'])->name('agent.dashboard');
+});
+ // End Group Agent Middleware.
