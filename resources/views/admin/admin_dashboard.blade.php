@@ -273,7 +273,7 @@
                     </a>
                   </li>
                   <li class="dropdown-item py-2">
-                    <a href="javascript:;" class="text-body ms-0">
+                    <a href="{{ route('admin.logout')}}" class="text-body ms-0">
                       <i class="me-2 icon-md" data-feather="log-out"></i>
                       <span>Log Out</span>
                     </a>
@@ -295,12 +295,9 @@
 					
 			<!-- partial:partials/_navbar.html -->
 
-      @include('admin.partials.footer')
+      
 			<!-- partial:partials/_footer.html -->
-			<footer class="footer d-flex flex-column flex-md-row align-items-center justify-content-between px-4 py-3 border-top small">
-				<p class="text-muted mb-1 mb-md-0">Copyright © 2022 <a href="https://www.nobleui.com" target="_blank">NobleUI</a>.</p>
-				<p class="text-muted">Handcrafted With <i class="mb-1 text-primary ms-1 icon-sm" data-feather="heart"></i></p>
-			</footer>
+			@include('admin.partials.footer')
 			<!-- partial -->
 		
 		</div>
