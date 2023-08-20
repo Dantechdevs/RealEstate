@@ -27,9 +27,20 @@ class AdminController extends Controller
         return view('admin.admin_login');
     }  //End method
 
+    //show update form
+    public function AdminProfileUpdate(){
+      $id = Auth::user()->id;
+      $profileData= user::find($id);
+    
+      return view('admin.admin_profile',[
+        'profileData'=>$profileData,
+      ]);
+      
+    }
     public function AdminProfileStore(Request $request)
     {
         $id = Auth::user()->id;
+       // dd($id);
         $data = user::find($id);
         $data->username = $request->username;
         $data->name = $request->name;
@@ -44,6 +55,7 @@ class AdminController extends Controller
           $data['photo'] = $filename;
         }
           $data->save();
+          
           $notification = array(
             'message' => 'Admin Profile updated successfully',
             'alert type' => 'success'  );
