@@ -23,8 +23,8 @@
             <th>type Name</th>
             <th>Type Icon</th>
             <th>Action</th>
-            
           </tr>
+
         </thead>
         <tbody>
           @foreach ($types as $key =>$item)
@@ -34,9 +34,8 @@
             <td>{{$item->type_name}}</td>
             <td>{{$item->type_icon}}</td>
             <td>
-  <a href="" class="btn btn-warning">Warning>Edit</a>  
-  <a href="" class="btn btn-danger">Warning>Delete</a>
-  
+  <a href="{{route('edit.type',$item->id)}}" class="btn btn-warning">Edit</a>  
+  <a href="" class="btn btn-danger">Delete</a>
             </td>
           </tr>
           @endforeach

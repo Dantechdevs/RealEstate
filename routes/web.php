@@ -59,6 +59,7 @@ Route::controller(PropertyTypeController::class)->group(function()
         Route::get('/all/type','AllType')->name('all.type');
         Route::get('/add/type','AddType')->name('add.type');
         Route::post('/store/type','StoreType')->name('store.type');
-        
+        Route::get('/edit/type/{id}','EditType')->name('edit.type');
+        Route::post('/update/type','UpdateType')->name('update.type');
     });
 }); // end  Group Admin Middleware

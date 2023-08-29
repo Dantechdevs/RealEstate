@@ -25,7 +25,7 @@ class PropertyTypeController extends Controller
   public function StoreType(Request $request){
   $request->validate([
     'type_name' => 'required|Unique:property_types|max:200',
-    'type_name' => 'required'
+    'type_icon' => 'required'
   ]);
    PropertyType::insert([
     'type_name'=>$request->type_name,
@@ -39,4 +39,23 @@ class PropertyTypeController extends Controller
 
 
   } // End Method
+
+  public function EditType($id){
+   $types=PropertyType::findOrFail($id);
+   return view('Backend.type.edit_type', compact('types'));
+  }
+  public function UpdateType(Request $request){
+    $pid=$request->id;
+    PropertyType::findOrFail($pid)->update([
+      'type_name'=>$request->type_name,
+      'type_icon'=>$request->type_icon,
+  
+     ]);
+     $notification = array(
+      'message' => 'Property Type updated successfully',
+      'alert type' => 'success'  );
+      return redirect() ->route('all.type')->with($notification);
+  
+  
+    } // End Method
 }
