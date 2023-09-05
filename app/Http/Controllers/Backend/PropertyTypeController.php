@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\PropertyType;
+use App\Models\Amenities;
 use Illuminate\Validation\Rules\Unique;
 
 class PropertyTypeController extends Controller
@@ -58,4 +59,59 @@ class PropertyTypeController extends Controller
   
   
     } // End Method
+
+    public function DeleteType($id){
+
+      PropertyType::findOrFail($id)->delete();
+     $notification = array(
+      'message' => 'Property Type Deleted successfully',
+      'alert type' => 'success'  );
+      return redirect() ->back()->with($notification);
+
+    } //End Method
+
+    ///Amenities All Method////
+
+    public function AllAmenitie(){
+
+      $amenities = Amenities::latest()->get();
+      return view('Backend.Amenities.all_amenities', compact('amenities'));
+  
+    } //End Method
+  
+
+    public function AddAmenitie(){
+
+      return view('Backend.Amenities.add_amenities');
+  
+
+
+
+}
+
+public function StoreAmenitie(Request $request){
+  
+   Amenities::insert([
+    'amenities_name'=>$request->amenities_name,
+    
+
+   ]);
+   $notification = array(
+    'message' => 'Property Type created successfully',
+    'alert type' => 'success'  );
+    return redirect() ->route('all.amenitie')->with($notification);
+
+
+  } // End Method
+
+public function EditAmenitie($id){
+  $amenities = Amenities::findOrFail($id);
+  return view('Backend.amenities.edit_amenities',compact('amenities'));
+
+
+}
+    
+    
+
+
 }

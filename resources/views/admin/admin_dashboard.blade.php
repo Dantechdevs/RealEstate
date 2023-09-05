@@ -326,13 +326,17 @@
   <script src="{{ asset('assets/js/dashboard-dark.js')}}"></script>
 	<!-- End custom js for this page -->
  
-<!-- Plugin js for this page -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <script src="{{ asset('assets/js/code/code.js')}}"></script>
+  <script src="{{ asset('assets/js/code/validate.min.js')}}"></script>
+
+<!-- Plugin js for data tables -->
 <script src="{{ asset('assets/vendors/datatables.net/jquery.dataTables.js')}}"></script>
 <script src="{{ asset('assets/vendors/datatables.net-bs5/dataTables.bootstrap5.js')}}"></script>
 <!-- End plugin js for this page -->
 <!-- Custom js for this page -->
 <script src="{{ asset('assets/js/data-table.js')}}"></script>
-<!-- End custom js for this page -->
+<!-- End custom js for data tables -->
 
 </body>
 </html>    

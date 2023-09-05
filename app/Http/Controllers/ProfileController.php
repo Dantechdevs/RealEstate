@@ -56,5 +56,10 @@ class ProfileController extends Controller
         $request->session()->regenerateToken();
 
         return Redirect::to('/');
-    }
+    } // End Method
+
+
+
 }
+
+
