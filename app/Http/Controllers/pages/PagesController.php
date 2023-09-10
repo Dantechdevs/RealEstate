@@ -15,10 +15,16 @@ class PagesController extends Controller
 
     public function contact()
     {
-        return view('frontend.pages.contact');
+        $pagename = 'Contact Us';
+        return view('frontend.pages.contact', [
+            'pagename' => $pagename,
+        ]);
     }
     public function aboutus()
     {
-        return view('frontend.pages.aboutus');
+        $pagename = 'About Us';
+        return view('frontend.pages.aboutus', [
+            'pagename' => $pagename,
+        ]);
     }
 }
