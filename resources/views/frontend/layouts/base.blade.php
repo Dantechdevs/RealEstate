@@ -58,7 +58,7 @@
                         <img class="img-fluid" src="{{ asset('frontend/theme/img/icon-deal.png') }}" alt="Icon"
                             style="width: 30px; height: 30px;">
                     </div>
-                    <h1 class="m-0 text-primary">Makaan</h1>
+                    <h1 class="m-0 text-primary">{{ config('app.name', 'Laravel') }}</h1>
                 </a>
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse"
                     data-bs-target="#navbarCollapse">
@@ -70,7 +70,10 @@
                             class="nav-item nav-link
                          @if (Route::currentRouteName() == 'pages.home') active @endif
                          ">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
+                        <a href="{{ route('about') }}"
+                            class="nav-item nav-link
+                        @if (Route::currentRouteName() == 'about') active @endif
+                        ">About</a>
                         <!-- <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Property</a>
                             <div class="dropdown-menu rounded-0 m-0">
@@ -86,7 +89,10 @@
                                 <a href="404.html" class="dropdown-item">404 Error</a>
                             </div>
                         </div>-->
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="{{ route('contact') }}"
+                            class="nav-item nav-link
+                                                @if (Route::currentRouteName() == 'contact') active @endif
+                        ">Contact</a>
 
                     </div>
                     @auth

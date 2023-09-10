@@ -12,4 +12,13 @@ class PagesController extends Controller
     {
         return view('frontend.pages.home');
     }
+
+    public function contact()
+    {
+        return view('frontend.pages.contact');
+    }
+    public function aboutus()
+    {
+        return view('frontend.pages.aboutus');
+    }
 }
