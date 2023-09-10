@@ -89,10 +89,13 @@
                                 <a href="404.html" class="dropdown-item">404 Error</a>
                             </div>
                         </div>-->
+                        <a href="{{ route('properties.index') }}"
+                            class="nav-item nav-link @if (Route::currentRouteName() == 'properties.index') active @endif ">Properties
+                        </a>
                         <a href="{{ route('contact') }}"
-                            class="nav-item nav-link
-                                                @if (Route::currentRouteName() == 'contact') active @endif
-                        ">Contact</a>
+                            class="nav-item nav-link @if (Route::currentRouteName() == 'contact') active @endif ">Contact
+                        </a>
+
 
                     </div>
                     @auth
