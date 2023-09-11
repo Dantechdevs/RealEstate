@@ -1,7 +1,7 @@
 <nav class="sidebar">
     <div class="sidebar-header">
         <a href="#" class="sidebar-brand">
-            Dantech<span>Devs</span>
+            {{ config('app.name', 'Laravel') }}<span> Estate</span>
         </a>
         <div class="sidebar-toggler not-active">
             <span></span>
@@ -21,7 +21,7 @@
             <li class="nav-item nav-category">Account</li>
             <li class="nav-item">
                 <a href="{{ route('agent.profile') }}" class="nav-link">
-                    <i class="link-icon" data-feather="box"></i>
+                    <i class="link-icon" data-feather="user-plus"></i>
                     <span class="link-title">Profile</span>
                 </a>
             </li>

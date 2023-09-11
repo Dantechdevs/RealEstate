@@ -8,7 +8,7 @@ Route::middleware(['auth', 'role:agent'])->group(function () {
     Route::get('/agent/dashboard', [AgentController::class, 'AgentDashboard'])->name('agent.dashboard');
     Route::controller(AgentProfileController::class)->prefix('agent')->group(function () {
         Route::get('/profile', 'agentprofile')->name('agent.profile');
-        Route::get('/about-us', 'aboutus')->name('about');
+        Route::patch('/update/profile', 'updateAgentProfile')->name('agent.update');
 
 
     });
