@@ -1,5 +1,7 @@
 @extends('agent.agent_base')
 @section('content')
+@endsection
+@section('name')
     <x-app-layout>
 
 

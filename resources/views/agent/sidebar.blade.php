@@ -18,9 +18,16 @@
                     <span class="link-title">Dashboard</span>
                 </a>
             </li>
+            <li class="nav-item nav-category">Account</li>
+            <li class="nav-item">
+                <a href="{{ route('agent.profile') }}" class="nav-link">
+                    <i class="link-icon" data-feather="box"></i>
+                    <span class="link-title">Profile</span>
+                </a>
+            </li>
 
 
-            <li class="nav-item nav-category">Components</li>
+            <!-- <li class="nav-item nav-category">Components</li>
             <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="collapse" href="#uiComponents" role="button" aria-expanded="false"
                     aria-controls="uiComponents">
@@ -35,6 +42,26 @@
                         </li>
                         <li class="nav-item">
                             <a href="pages/ui-components/alerts.html" class="nav-link">Alerts</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </li>-->
+            <li class="nav-item nav-category">Properties</li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="collapse" href="#uiComponents" role="button" aria-expanded="false"
+                    aria-controls="uiComponents">
+                    <i class="link-icon" data-feather="feather"></i>
+                    <span class="link-title">Your Properties</span>
+                    <i class="link-arrow" data-feather="chevron-down"></i>
+                </a>
+                <div class="collapse" id="uiComponents">
+                    <ul class="nav sub-menu">
+                        <li class="nav-item">
+                            <a href="" class="nav-link">All Properties</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link">Create</a>
                         </li>
                     </ul>
                 </div>
