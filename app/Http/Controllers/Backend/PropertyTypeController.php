@@ -111,7 +111,21 @@ public function EditAmenitie($id){
 
 }
     
-    
+public function UpdateAmenitie(Request $request){
+  $ame_id = $request->id;
+  
+  Amenities::findOrFail($ame_id)->updated([
+   'amenities_name'=>$request->amenities_name,
+   
+
+  ]);
+  $notification = array(
+   'message' => 'Amenities updated successfully',
+   'alert type' => 'success'  );
+   return redirect() ->route('all.amenitie')->with($notification);
+
+
+ } // End Method
 
 
 }
