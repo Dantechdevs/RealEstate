@@ -114,7 +114,7 @@ public function EditAmenitie($id){
 public function UpdateAmenitie(Request $request){
   $ame_id = $request->id;
   
-  Amenities::findOrFail($ame_id)->updated([
+  Amenities::findOrFail($ame_id)->update([
    'amenities_name'=>$request->amenities_name,
    
 
@@ -127,5 +127,14 @@ public function UpdateAmenitie(Request $request){
 
  } // End Method
 
+ public function DeleteAmenitie($id){
+  Amenities::findOrFail($id)->delete();
+  $notification = array(
+    'message' => 'Amenities deleted successfully',
+    'alert type' => 'success'  );
+    return redirect() ->back()->with($notification);
+ 
+
+ } //End method
 
 }

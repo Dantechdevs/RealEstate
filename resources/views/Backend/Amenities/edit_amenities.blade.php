@@ -15,6 +15,7 @@
 <div class="card">
  <div class="card-body">
 
+
      <h6 class="card-title">Edit Amenities</h6>
 
      <form id="myForm" method="POST" action="{{route('update.aminitie')}}" 
