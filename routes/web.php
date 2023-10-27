@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminControllerC;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\Backend\PropertyTypeController;
+use App\Http\Controllers\Backend\RoleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -74,10 +75,18 @@ Route::controller(PropertyTypeController::class)->group(function()
         Route::get('/edit/amenitie/{id}','EditAmenitie')->name('edit.amenitie');
         Route::post('/update/aminitie','UpdateAminitie')->name('update.aminitie');
         Route::get('/delete/amenitie/{id}','DeleteAmenitie')->name('delete.aminitie');
-    });
-    
+    });// end  Group Amenities
 
-// end  Group Amenities
+    // Permission All Route  
+Route::controller(RoleController::class)->group(function()
+{
+    Route::get('/all/Permission','AllPermission')->name('all.permission');
+    Route::get('/add/type','AddType')->name('add.type');
+    Route::post('/store/type','StoreType')->name('store.type');
+    Route::get('/edit/type/{id}','EditType')->name('edit.type');
+    Route::post('/update/type','UpdateType')->name('update.type');
+    Route::get('/delete/type/{id}','DeleteType')->name('delete.type');
+});// end  Group Admin Middleware
 
 }); 
 
