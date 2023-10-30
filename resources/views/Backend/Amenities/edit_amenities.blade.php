@@ -15,12 +15,14 @@
 <div class="card">
  <div class="card-body">
 
+
      <h6 class="card-title">Edit Amenities</h6>
 
-     <form id="myForm" method="POST" action="{{route('store.aminitie')}}" 
+     <form id="myForm" method="POST" action="{{route('update.aminitie')}}" 
      class = "form-sample">
               
      @csrf
+     <input type="hidden" name="id" value="{{$amenities->id}}"
                
  <div class="form-group mb-3">
      <label for="exampleInputEmail1" class="form-label">Amenities Name</label>

@@ -22,8 +22,9 @@
               
               @csrf
                <input type="hidden" name="id" value="{{$types->id}}"
+
                 <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Type Name</label>
+          <label  for="exampleInputEmail1" class="form-label">Type Name  </label>
                   <input type="text" name="type_name" class="form-control @error('type_name') is-invalid @enderror" value="{{
                   $types->type_name}}">
                   @error('type_name')
@@ -32,9 +33,9 @@
                 </div>
                
                 <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Type Icon</label>
+          <label for="exampleInputEmail1" class="form-label">Type Icon  </label>
                   <input type="text" name="type_icon" class="form-control @error('type_icon') is-invalid @enderror" value="{{
-                    $types->type_icon}}"> >
+                  $types->type_icon}}">
                   @error('type_icon')
                   <span class="text danger">{{$message}}</span>
                   @enderror
