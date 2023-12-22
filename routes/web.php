@@ -77,16 +77,27 @@ Route::controller(PropertyTypeController::class)->group(function()
         Route::get('/delete/amenitie/{id}','DeleteAmenitie')->name('delete.aminitie');
     });// end  Group Amenities
 
+
+// Types Group
+
+Route::controller(PropertyTypeController::class)->group(function()
+    {  
+       
+
+    }
+);
+
     // Permission All Route  
 Route::controller(RoleController::class)->group(function()
 {
-    Route::get('/all/Permission','AllPermission')->name('all.permission');
-    Route::get('/add/type','AddType')->name('add.type');
+    Route::get('/all/permission','AllPermission')->name('all.permission');
+    Route::get('/add/permission','AddPermission')->name('add.permission');
     Route::post('/store/type','StoreType')->name('store.type');
     Route::get('/edit/type/{id}','EditType')->name('edit.type');
     Route::post('/update/type','UpdateType')->name('update.type');
     Route::get('/delete/type/{id}','DeleteType')->name('delete.type');
 });// end  Group Admin Middleware
+
 
 }); 
 

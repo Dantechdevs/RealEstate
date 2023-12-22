@@ -13,6 +13,11 @@ class RoleController extends Controller
     public function AllPermission(){
 
         $permission =Permission::all(); 
-        return view('Backend.pages.permission.all_permission',compact('permissions'));
-    }
+        return view('Backend.pages.permission.all_permission',compact('permission'));
+    }//end Method
+
+    public function AddPermission(){
+        return view('Backend.pages.permission.add_permission');
+
+    } //end Method
 }

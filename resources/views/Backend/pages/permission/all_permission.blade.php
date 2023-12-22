@@ -5,7 +5,7 @@
 
     <nav class="page-breadcrumb">
         <ol class="breadcrumb">
-          <a href="{{route('add.amenitie')}}" class="btn btn-info">Add Permission</a>   
+          <a href="{{route('add.permission')}}" class="btn btn-info">Add Permission</a>   
         </ol>
     </nav>
 
@@ -21,16 +21,18 @@
           <tr>
             <th>Serial Number</th>
             <th>Permission Name</th>
+            <th>Group Name</th>
             <th>Action</th>
           </tr>
 
         </thead>
         <tbody>
-          @foreach ($amenities as $key =>$item)
+          @foreach ($permission as $key =>$item)
             
           <tr>
             <td>{{$key+1}}</td>
-            <td>{{$item->amenities_name}}</td>
+            <td>{{$item->name}}</td>
+            <td>{{$item->group_name}}</td>
             
             <td>
   <a href="{{route('edit.amenitie',$item->id)}}" class="btn btn-warning"> Edit </a>  
